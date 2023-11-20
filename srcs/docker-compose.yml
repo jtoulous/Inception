@@ -5,14 +5,14 @@ volumes:
                 name: wordpress
                 driver: local
                 driver_opts:
-                        device: /home/kali/Desktop/inceptionDaGoodOne/srcs/wordpress_vol
+                        device: /home/kali/Documents/wordpress
                         o: bind
                         type: none
         mariadb:
                 name: mariadb
                 driver: local
                 driver_opts:
-                        device: /home/kali/Desktop/inceptionDaGoodOne/srcs/mariadb_vol
+                        device: /home/kali/Documents/mariadb
                         o: bind
                         type: none
 
