@@ -1,0 +1,10 @@
+SQL_DATABASE=inception
+SQL_USER=jtoulous
+SQL_PWD=1880040410
+DOMAIN_NAME=jtoulous.42.fr
+WP_TITLE=42INCEPTION
+WP_USER=amnesia
+WP_PWD=amnesia
+WP_PATH=/var/www/wordpress
+WP_EMAIL=jtoulous@student.42.fr
+PHP_PORT=9000
