@@ -1,15 +1,12 @@
-FROM debian:bullseye
+FROM debian:buster
 
-ENV SQL_DATABASE=inception
-ENV SQL_USER=jtoulous
-ENV SQL_PWD=1880040410
 
-RUN apt-get update \
-    && apt-get install mariadb-server -y \
-    && apt-get install mariadb-client -y
+RUN apt-get update -y && apt-get install mariadb-server -y
 
-COPY tools/init.sh tmp/init.sh
+COPY ./tools/50-server.cnf /etc/mysql/mariadb.conf.d/
 
-RUN chmod +x tmp/init.sh
 
-CMD ["./tmp/init.sh"]
+COPY ./tools/script.sh /
+
+
+CMD ["/script.sh"]
