@@ -1,15 +1,11 @@
-FROM debian:buster
+FROM debian:bullseye
 
 
-RUN apt update -y 
-
-RUN apt install php-fpm php-mysql -y
-
-RUN apt install curl -y
+RUN apt update -y \ 
+    && apt install php7.4-fpm php-mysql -y \
+    && apt install curl -y
 
 
 COPY ./tools/script.sh /
-COPY ./tools/wp-config.php /
-
 
 CMD [ "/script.sh" ]
