@@ -6,7 +6,7 @@ if [ ! -f db1.sql ]; then
     chmod 644 /etc/mysql/mariadb.conf.d/50-server.cnf 
     
     service mariadb start
-    sleep 7
+    sleep 4
     
     echo "CREATE DATABASE IF NOT EXISTS $db_name ;" > db1.sql
     echo "CREATE USER IF NOT EXISTS '$db_admin'@'%' IDENTIFIED BY '$db_admin_pwd' ;" >> db1.sql 
@@ -17,7 +17,8 @@ if [ ! -f db1.sql ]; then
     echo "FLUSH PRIVILEGES;" >> db1.sql
     
     mysql < db1.sql
-fi
 
+fi
+   
 kill $(cat /var/run/mysqld/mysqld.pid)
 mysqld
